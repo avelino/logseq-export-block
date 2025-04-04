@@ -26,7 +26,7 @@
     "@logseq/libs": "^0.0.17",
     "@types/node": "^20.11.24",
     "typescript": "^5.3.3",
-    "vite": "^6.2.4"
+    "vite": "^6.2.5"
   },
   "dependencies": {
     "@contentful/rich-text-from-markdown": "^16.0.0",
