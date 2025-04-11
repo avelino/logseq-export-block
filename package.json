@@ -1,6 +1,6 @@
 {
   "name": "logseq-export-block",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Export Logseq blocks to different markdown formats (Slack, WhatsApp, Google Docs and Rich Text)",
   "main": "dist/index.html",
   "type": "module",
