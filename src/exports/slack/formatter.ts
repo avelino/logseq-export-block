@@ -39,10 +39,12 @@ export class SlackFormatter implements BlockFormatter {
     // Bold: Convert **text** to *text* (Slack uses single asterisks)
     formattedContent = formattedContent.replace(/\*\*(.*?)\*\*/g, '*$1*');
 
-    // Italic: Convert __text__ or _text_ to _text_
+    // Italic: Convert __text__ to _text_ (Slack italic)
     formattedContent = formattedContent.replace(/__(.*?)__/g, '_$1_');
+    // Make sure single underscore italic is preserved
+    formattedContent = formattedContent.replace(/(?<!\w)_([^_]+)_(?!\w)/g, '_$1_');
 
-    // Strikethrough: Convert ~~text~~ to ~text~ (Slack uses single tildes)
+    // Strikethrough: Convert ~~text~~ to ~text~ (Slack strikethrough)
     formattedContent = formattedContent.replace(/\~\~(.*?)\~\~/g, '~$1~');
 
     // Fix links for Slack format
