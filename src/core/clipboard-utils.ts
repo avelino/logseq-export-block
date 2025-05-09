@@ -24,11 +24,11 @@ export function markdownToHtml(markdown: string): string {
   // Convert bold
   html = html.replace(/\*([^*]+)\*/g, '<b>$1</b>');
 
-  // Convert italic
-  html = html.replace(/_([^_]+)_/g, '<i>$1</i>');
+  // Convert italic - use a more specific regex to handle various formats
+  html = html.replace(/_(.*?)_/g, '<i>$1</i>');
 
-  // Convert strikethrough
-  html = html.replace(/~([^~]+)~/g, '<s>$1</s>');
+  // Convert strikethrough - use a more specific regex
+  html = html.replace(/~(.*?)~/g, '<s>$1</s>');
 
   // Convert code
   html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
